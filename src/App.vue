@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <div>Hello World</div>
+    <div>Counter:</div>
+    <div>{{ $store.state.count }}</div>
+    <button @click="onIncrease">+</button>
   </div>
 </template>
 
@@ -9,6 +11,11 @@
 export default {
   name: 'App',
   components: {
+  },
+  methods: {
+    onIncrease(){
+      this.$store.commit('increase');
+    }
   }
 }
 </script>
