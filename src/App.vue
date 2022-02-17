@@ -2,6 +2,7 @@
   <div id="app">
     <div>Counter:</div>
     <div>{{ $store.state.count }}</div>
+    <div>Double: {{ doubleCounter }}</div>
     <button @click="onIncrease">+</button>
   </div>
 </template>
@@ -15,6 +16,11 @@ export default {
   methods: {
     onIncrease(){
       this.$store.commit('increase');
+    }
+  },
+  computed: {
+    doubleCounter: function () {
+      return this.$store.state.count * 2
     }
   }
 }
